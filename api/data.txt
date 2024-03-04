@@ -1,0 +1,1 @@
+mongodb+srv://blogApp:Arpit@914@cluster0.uawntp8.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
