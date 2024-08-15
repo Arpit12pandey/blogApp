@@ -212,3 +212,6 @@ app.listen(PORT, () => {
 // app.use(express.json());: This line sets up middleware to parse incoming request bodies with JSON payloads. When a request with a JSON payload is received by your Express server, this middleware parses the JSON data and makes it available in req.body for further processing in your route handlers.
 
 // app.use(cookieParser());: This line sets up middleware to parse cookies attached to incoming requests. When a request contains cookies, this middleware parses the cookie header and makes the cookie data available in req.cookies for further processing in your route handlers. This is useful when you need to access cookies sent by the client, such as session tokens or authentication cookies.
+//This line of code serves static files from the uploads directory.
+
+//app.use('/uploads', ...): This tells Express to use the middleware function provided for any requests that begin with /uploads.
