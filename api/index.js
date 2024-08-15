@@ -67,8 +67,13 @@ if(!errors.isEmpty()){
     const passOK = bcrypt.compareSync(password, userDoc.password);
     if (passOK) {
         //logged in, then we will respond with json web token
+        //if the user gets logged in then a token is generated using JWT which has the payloads as username and id,secret which is used to sign the token,options object
+        //which can contain additional info such as expiry time of the token and a call back function.
         jwt.sign({ username, id: userDoc._id }, secret, {}, (error, token) => {
             if (error) throw error;
+            //Once the token is created, it is sent back to the client as a cookie using res.cookie('token', token).
+            //res.cookie('token', token): This sets a cookie named token with the value of the generated JWT. Cookies are often used to store tokens because they allow 
+            //the token to be automatically sent with every request made to the server, facilitating session management.
             res.cookie('token', token).json({
                 id: userDoc._id,
                 username
